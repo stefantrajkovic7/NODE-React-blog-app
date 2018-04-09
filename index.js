@@ -1,28 +1,42 @@
-const cluster = require('cluster');
+const express = require('express');
+const mongoose = require('mongoose');
+const cookieSession = require('cookie-session');
+const passport = require('passport');
+const bodyParser = require('body-parser');
+const keys = require('./config/keys');
 
-if (cluster.isMaster) {
-    cluster.fork();
-    cluster.fork();
-    cluster.fork();
-    cluster.fork();
-} else {
-    const express = require('express');
-    const app = express();
+require('./models/User');
+require('./models/Blog');
+require('./services/passport');
 
-    const doWork = (duration) => {
-        const start = Date.now();
-        while (Date.now() - start < duration) {}
-    };
+mongoose.Promise = global.Promise;
+mongoose.connect(keys.mongoURI, { useMongoClient: true });
 
-    app.get('/', (req, res) => {
-        doWork(5000);
-        res.send('Hi there');
-    });
+const app = express();
 
-    app.get('/fast', (req, res) => {
-        res.send('This was fast');
-    });
+app.use(bodyParser.json());
+app.use(
+  cookieSession({
+    maxAge: 30 * 24 * 60 * 60 * 1000,
+    keys: [keys.cookieKey]
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
 
-    app.listen(3000);
+require('./routes/authRoutes')(app);
+require('./routes/blogRoutes')(app);
+
+if (['production'].includes(process.env.NODE_ENV)) {
+  app.use(express.static('client/build'));
+
+  const path = require('path');
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve('client', 'build', 'index.html'));
+  });
 }
 
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Listening on port`, PORT);
+});
