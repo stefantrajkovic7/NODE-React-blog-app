@@ -11,7 +11,10 @@ require('./services/passport');
 require('./services/cache');
 
 mongoose.Promise = global.Promise;
-mongoose.connect(keys.mongoURI, { useMongoClient: true });
+mongoose.connect(keys.mongoURI, { useMongoClient: true }, (err) => {
+    if (err) throw err;
+    console.log("Connected to Mongo");
+});
 
 const app = express();
 
@@ -36,6 +39,10 @@ if (['production'].includes(process.env.NODE_ENV)) {
     res.sendFile(path.resolve('client', 'build', 'index.html'));
   });
 }
+
+process.on('uncaughtException', function (err) {
+    console.log(err);
+});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
