@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb8d2b23-adaf-490f-ba0b-01cb2bc14619" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/blogRoutes.js" afterPath="$PROJECT_DIR$/routes/blogRoutes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/cache.js" afterPath="$PROJECT_DIR$/services/cache.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -38,21 +37,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blogRoutes.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="blogRoutes.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/blogRoutes.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+              <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cache.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cache.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/services/cache.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state relative-caret-position="884">
+              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -167,8 +166,8 @@
         <option value="$PROJECT_DIR$/client/src/components/Header.js" />
         <option value="$PROJECT_DIR$/client/src/actions/index.js" />
         <option value="$PROJECT_DIR$/index.js" />
-        <option value="$PROJECT_DIR$/routes/blogRoutes.js" />
         <option value="$PROJECT_DIR$/services/cache.js" />
+        <option value="$PROJECT_DIR$/routes/blogRoutes.js" />
       </list>
     </option>
   </component>
@@ -316,12 +315,12 @@
       <workItem from="1522922976697" duration="14331000" />
       <workItem from="1523284311633" duration="5285000" />
       <workItem from="1523348922286" duration="439000" />
-      <workItem from="1523353164677" duration="2271000" />
+      <workItem from="1523353164677" duration="4742000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27688000" />
+    <option name="totallyTimeSpent" value="30159000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-258" width="1936" height="1056" extended-state="6" />
@@ -622,18 +621,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/blogRoutes.js">
+    <entry file="file://$PROJECT_DIR$/services/cache.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+        <state relative-caret-position="884">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/cache.js">
+    <entry file="file://$PROJECT_DIR$/routes/blogRoutes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="306">
+          <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
           <folding />
         </state>
       </provider>
