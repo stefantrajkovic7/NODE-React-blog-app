@@ -8,7 +8,11 @@ beforeEach(async () => {
     });
     page = await browser.newPage();
     await page.goto('localhost:3000');
-})
+});
+
+afterEach(async () => {
+    await browser.close();
+});
 
 test('We can lunch a browser', async () => {
     const text = await page.$eval('a.brand-logo', el => el.innerHTML);
