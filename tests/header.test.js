@@ -26,7 +26,7 @@ test('clicking login starts oauth flow', async () => {
 
 test('When signed in, shows logout button', async () => {
     await page.login();
-    
+
     const text = await page.getContentsOf('a[href="/auth/logout"]');
     expect(text).toEqual('Logout');
 });
