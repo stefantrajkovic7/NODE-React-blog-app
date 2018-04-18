@@ -36,7 +36,14 @@ describe('When logged in', async () => {
         });
 
         test('Submitting then saving adds blog to index page', async () => {
+            await page.click('button.green');
+            await page.waitFor('.card');
 
+            const title = await page.getContentsOf('.card-title');
+            const content = await page.getContentsOf('p');
+
+            expect(title).toEqual('My Title');
+            expect(content).toEqual('My Content');
         });
     });
 
