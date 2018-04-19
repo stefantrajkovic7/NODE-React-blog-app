@@ -6,6 +6,14 @@ import formFields from './formFields';
 import { withRouter } from 'react-router-dom';
 import * as actions from '../../actions';
 
+const style = {
+    upload: {
+        marginTop: 20,
+        marginBottom: 20,
+        fontStyle: 'italic'
+    },
+};
+
 class BlogFormReview extends Component {
   renderFields() {
     const { formValues } = this.props;
@@ -52,6 +60,11 @@ class BlogFormReview extends Component {
       <form onSubmit={this.onSubmit.bind(this)}>
         <h5>Please confirm your entries</h5>
         {this.renderFields()}
+
+        <div style={style.upload} id="photoUpload">
+            <h5>Add An Image</h5>
+            <input type="file" accept="image/*"/>
+        </div>
 
         {this.renderButtons()}
       </form>
